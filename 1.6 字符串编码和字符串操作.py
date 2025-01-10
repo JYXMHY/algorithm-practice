@@ -30,4 +30,52 @@ print(name1 , name2, sep='')  # 小明小红，原本是小明 小红
 # sep: 表示多个打印内容之间的分隔符,指定为空字符串（''），则会改变输出格式。
 
 # 2.2 *重复输出
-print('好好学习，天天向上'* 5)
+print('好好学习，天天向上\n'* 5)
+# 需要输出多少次，*后面就写多少次
+print('&\t'* 10)
+
+# 2.3 成员运算符 in
+# 作用：检查字符串中是否包含了某个字符串（即某个字符或多个字符）
+# in: 如果包含的话，返回 True，不包含返回 False
+# not in: 如果不包含的话，返回 True，包含返回 False
+name = 'bingbing'   
+print('b' in name) # True
+print('a' in name) # False
+print('b' not in name) # False
+print('a' not in name) # True
+print('bin' in name) # True
+print('binb'in name) # False
+
+# 2.4 下标
+# Python中下标从0开始
+# 作用：通过下标能够快速找到对应的数据
+# 格式：字符串名[下标值]
+name = 'foreverstar'
+# 从左往右数，下标从0开始
+print(name[0])
+print(name[1])
+# print(name[12])  # 索引错误，取值的时候超过下标范围
+# 从右往左数，下标从-1开始，-1，-2...
+print(name[-1])
+print(name[-2])
+# print(name[-12]) # 索引错误
+
+# 2.5 切片
+# 含义：指对操作的对象截取其中一部分的操作
+# 语法：[开始位置：结束位置；步长]
+# 包前不包后：即从起始位置开始，到结束位置的前一位结束（不包含结束位置本身）
+st = 'abcdefghijk'
+print(st[0:4]) # abcd
+print(st[4:7]) # efg
+print(st[3:])  # defghijk --下标为3之后的全部截取到
+print(st[:7])  # abcdefg --下标为7之前的全部截取到
+# 从右往左
+print(st[-1:]) # k
+print(st[:-1]) # abcdefghij
+# 步长：表示选取间隔，不写步长，则默认是1
+# 步长的绝对值大小决定切取的间隔，正负号决定切取的方向
+# 正数表示从左往右取值，负数表示从右往左取值
+st = 'abcdefghijk'
+print(st[-1::1])  # 从右往左切只能取到一个值k
+print(st[-1::-1]) # 从左往右切kjihgfedcba
+print(st[-1:-5:-1]) # kjih
