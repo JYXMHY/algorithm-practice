@@ -40,7 +40,7 @@ print('我叫%s，今年%d岁' % info)
 # 3. 数据不可以被修改，保护数据的安全
 
 
-# 2. 字典
+# 2. 字典 dict
 # 基本概念：字典是一种可变的容器模型，可存储任意类型对象
 # 2.1 格式：字典名 = {key1: value1, key2: value2, ...}
 # 键值对：key-value形式保存，键和值之间用：隔开，键值对之间用逗号隔开
@@ -52,7 +52,7 @@ print(dic) # {'name': 'Jerry', 'age': 18} key是唯一的，后面的值会覆�
 dic = {'name': 'Tom',  'name1': 'Tom'}
 print(dic) # {'name': 'Tom', 'name1': 'Tom'} value可以重复
 
-# 2.2 字典的操作
+# 2.2 字典的操作一
 #   1. 查看元素
 # 变量名[key]
 dic = {'name': 'Tom', 'age':18}
@@ -109,3 +109,5 @@ print(dic) # {'age': 18}
 dic = {'name': 'Tom', 'age':18}
 dic.popitem() # 3.7之前的版本是随机删除一个键值对，3.7之后是默认删除最后一个键值对
 print(dic)
+
+
