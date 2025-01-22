@@ -95,7 +95,48 @@ funb(10)  # 传参，使用传入的参数,传入的是10
 # 因为 b 是第一个参数，它被赋值为 10;   a 没有传值，因此仍使用默认值 8。
 # 设置默认值：没有传值会根据默认值来执行代码，传了值根据传入的值来执行代码
 
+# 3. 可变参数
+# 含义：传入的值的数量是可以改变的，可以传入多个，也可以不传
+# 格式：def func(*args): 不一定非要是args，可以是其他的例如*names
+def func(*args):
+    print(args)       # args是一个元组
+    print(type(args)) # <class 'tuple'>
+func()                # 不传参，返回的是一个空元组
+func(1)               # 传一个参数，返回的是一个元组
+func(1, 2, 3)         # 传多个参数，返回的是一个元组
+func('海绵宝宝', '派大星', '章鱼哥') # 传多个参数，返回的是一个元组
 
+# 4. 关键字参数
+# 含义：传入的参数是一个字典
+# 格式：def func(**kwargs): 不一定非要是kwargs，可以是其他的例如**names
+def func(**kwargs):
+    print(kwargs)       # kwargs是一个字典
+    print(type(kwargs)) # <class 'dict'>
+func()                  # 不传参，返回的是一个空字典
+func(name = 'Tom')      # 传值的时候需要键值对的形式，返回的是一个字典
+func(name = 'Tom', age = 18) # 传多个参数，返回的是一个字典
+# 作用：可以扩展函数的功能
+
+# 4. 函数嵌套
+# 4.1 嵌套调用
+# 含义：在一个函数里面调用另外一个函数
+def study():
+    print('晚上在学习')
+def course():
+    study()              # 在course函数内调用study函数
+    print('Python基础')
+# 调用
+# study()
+course()
+# 4.2 嵌套定义
+# 含义：在一个函数里面定义另外一个函数
+def study():           # 外函数
+    print('晚上在学习')
+    def course():      # 内函数
+        print('Python基础')
+        # study()       # 不要在内函数中调用外函数，会陷入死循环，直到超过递归的最大深度
+    course()           # 注意缩进，定义和调用是同级的，调用如果在定义里面则永远调用不到
+study() # 调用study函数，course函数不会被调用
 
 
 
